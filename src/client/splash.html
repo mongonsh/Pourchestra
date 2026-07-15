@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="splash.css" />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="Guide mineral sand through four moonlit rooms and add your eight-note melody to Reddit's daily community song."
+    />
+    <title>Pourchestra: Moon Tide</title>
+  </head>
+  <body>
+    <main class="launch-card">
+      <div class="moon" aria-hidden="true"></div>
+      <section class="copy">
+        <div class="eyebrow">
+          <span class="live-dot"></span> LIVE · ONE DAILY REDDIT SONG
+        </div>
+        <h1>MOON <em>SAND</em></h1>
+        <p>
+          Solve four moonlit physics rooms. Every winner adds an eight-note
+          melody to today's community chorus.
+        </p>
+        <button class="start-button" id="start-button" type="button">
+          <span>ADD YOUR 8 NOTES</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </button>
+        <div class="meta">
+          <span>4 ROOMS</span>
+          <span aria-hidden="true">◆</span>
+          <span>TILT OR DRAG</span>
+          <span aria-hidden="true">◆</span>
+          <span id="reset-label">NEW SONG AT 00:00 UTC</span>
+        </div>
+      </section>
+
+      <section class="diorama" aria-label="Moon Tide game preview">
+        <div class="challenge">
+          <span>TODAY'S COMMUNITY SONG</span>
+          <strong id="community-count">0/100 <small>VOICES</small></strong>
+          <b aria-label="eight musical notes">♪♪♪</b>
+        </div>
+        <img
+          class="snoo-guide"
+          src="./assets/moon-koto/reddit-koto-guide.webp"
+          alt="Reddit robot in a kimono holding a koto"
+        />
+        <img
+          class="bridge bridge-one"
+          src="./assets/moon-koto/bamboo-bridge.webp"
+          alt=""
+        />
+        <img
+          class="bridge bridge-two"
+          src="./assets/moon-koto/bamboo-bridge.webp"
+          alt=""
+        />
+        <div class="mineral-sand" aria-hidden="true">
+          <i class="coral"></i><i class="amber"></i><i class="jade"></i
+          ><i class="iris"></i><i class="coral"></i><i class="jade"></i
+          ><i class="amber"></i><i class="iris"></i><i class="jade"></i
+          ><i class="coral"></i><i class="amber"></i><i class="iris"></i>
+        </div>
+        <div class="glasses" aria-hidden="true">
+          <span class="preview-glass coral" data-fill="half">
+            <i class="preview-sand"></i>
+            <img src="./assets/moon-koto/preview-glass-0.webp" alt="" />
+          </span>
+          <span class="preview-glass amber" data-fill="half">
+            <i class="preview-sand"></i>
+            <img src="./assets/moon-koto/preview-glass-1.webp" alt="" />
+          </span>
+          <span class="preview-glass jade" data-fill="half">
+            <i class="preview-sand"></i>
+            <img src="./assets/moon-koto/preview-glass-2.webp" alt="" />
+          </span>
+          <span class="preview-glass iris" data-fill="half">
+            <i class="preview-sand"></i>
+            <img src="./assets/moon-koto/preview-glass-3.webp" alt="" />
+          </span>
+        </div>
+        <div class="wind-callout">
+          <img src="./assets/moon-koto/wind-fan.webp" alt="" />
+          <span>TILT TO RESCUE STRAYS</span>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="splash.ts" defer></script>
+  </body>
+</html>
