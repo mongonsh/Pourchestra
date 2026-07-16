@@ -4,6 +4,15 @@ import test from 'node:test';
 
 const sceneUrl = new URL('../src/client/scenes/MoonKoto.ts', import.meta.url);
 const scene = await readFile(sceneUrl, 'utf8');
+const readme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+const gameHtml = await readFile(
+  new URL('../src/client/game.html', import.meta.url),
+  'utf8'
+);
+const splashHtml = await readFile(
+  new URL('../src/client/splash.html', import.meta.url),
+  'utf8'
+);
 
 function methodSource(start, end) {
   const startIndex = scene.indexOf(start);
@@ -20,7 +29,14 @@ test('the game presents Pourchestra as its single player-facing brand', () => {
   assert.match(hud, /'POURCHESTRA'/);
   assert.match(menu, /'POURCHESTRA MENU'/);
   assert.match(scene, /'PLAY KOTO WITH SAND'/);
-  assert.doesNotMatch(scene, /MOON SAND/);
+  assert.match(readme, /^# Pourchestra$/m);
+  assert.match(gameHtml, /<title>Pourchestra<\/title>/);
+  assert.match(splashHtml, /<title>Pourchestra<\/title>/);
+  assert.match(splashHtml, /<h1>POUR<em>CHESTRA<\/em><\/h1>/);
+
+  for (const surface of [scene, readme, gameHtml, splashHtml]) {
+    assert.doesNotMatch(surface, /Moon Tide|Moon Sand/i);
+  }
 });
 
 test('bridge feedback preserves its authored display scale', () => {
